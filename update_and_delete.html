@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Документация по языку программирования Dark | update и delete">
+    <link rel="icon" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon.png">
+    <title>Документация по языку программирования Dark | update и delete</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div style="justify-content: space-between; align-items: center;">
+            <h1 style="color: #ffffff;"><a href="index.html">Документация по языку программирования Dark</a></h1>
+            <button class="svg-button" onclick="toggleDropdown()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="dropdown" class="dropdown">
+            <select id="modules" name="modules">
+                <option value="обновленние_переменной">Обновленние переменной</option>
+                <option value="удаление_переменной">Удаление переменной</option>
+            </select>
+            <button class="button" onclick="goToModule()">Перейти</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#введение">Введение</a></li>
+                <li><a href="#синтаксис">Синтаксис</a></li>
+                <li><a href="#примеры">Примеры</a></li>
+                <li><a href="#контакты">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="введение">
+            <h2>Введение</h2>
+            <p><b>update</b> - это ключевое слово для обновления данных переменной.</p>
+            <p><b>delete</b> - это ключевое слово для удаления переменной.</p>
+        </section>
+
+        <section id="синтаксис">
+            <h2>Синтаксис</h2>
+            <p>Синтаксис <b>update</b> в Dark выглядит следующим образом:</p>
+            <pre><code>update <i>output(необязательно)</i> <i>тип_переменной</i> <i>название_переменной</i> <i>данные_переменной</i></code></pre>
+            <p>Синтаксис <b>delete</b> в Dark выглядит следующим образом:</p>
+            <pre><code>delete <i>output(необязательно)</i> <i>название_переменной</i></code></pre>
+        </section>
+
+        <section id="примеры">
+            <h2>Примеры использования</h2>
+            <section id="Обновленние_переменной">
+                <p>Обновленние переменной:</p>
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+<-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!":
+set str hi Hello world!
+<-#-> Обнавляем текстовую переменную "hi" на "Hey!":
+update str hi Hey!
+<-#-> Обънавляем текстовую переменную "hi" на "Hello world!" (с выводом):
+update output str hi Hello world!
+                </code></pre>
+                </div>
+            </section>
+            <section id="удаление_переменной">
+                <p>Удаление переменной:</p>
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+<-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!":
+set str hi Hello world!
+<-#-> Удаляем текстовую переменную "hi":
+delete hi
+<-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!":
+set str hi Hello world!
+<-#-> Удаляем текстовую переменную "hi" (с выводом):
+delete output hi
+                </code></pre>
+                </div>
+            </section>
+        </section>
+
+        <section id="контакты">
+            <h2>Контакты</h2>
+            <p>ВКонтакте: <a href="https://vk.com/vsp210">https://vk.com/vsp210</a></p>
+            <p>Телеграм: <a href="https://t.me/vsp210">https://t.me/vsp210</a></p>
+            <p>Моё портфолио: <a href="https://vsp210.github.io/portfolio/">https://vsp210.github.io/portfolio/</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мой Dark</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Код скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+            });
+        }
+        function goToModule() {
+            const select = document.getElementById('modules');
+            const selectedValue = select.value;
+
+            const urls = {
+                обновленние_переменной: '#обновленние_переменной',
+                удаление_переменной: '#удаление_переменной'
+            };
+
+            if (urls[selectedValue]) {
+                window.location.href = urls[selectedValue];
+            }
+        }
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>

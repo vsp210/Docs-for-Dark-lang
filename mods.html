@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Документация по языку программирования Dark | Модификации">
+    <link rel="icon" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon.png">
+    <title>Документация по языку программирования Dark | Модификации</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div style="justify-content: space-between; align-items: center;">
+            <h1 style="color: #ffffff;"><a href="index.html">Документация по языку программирования Dark</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#введение">Введение</a></li>
+                <li><a href="#синтаксис">Синтаксис</a></li>
+                <li><a href="#контакты">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="введение">
+            <h2>Введение</h2>
+            <p><b>Модификации</b> - это специальна система для создания дополнительных ключевых слов.</p>
+        </section>
+
+        <section id="синтаксис">
+            <h2>Синтаксис</h2>
+            <p>Синтаксис <b>модификаций</b> в Dark выглядит следующим образом:</p>
+            <pre><code>mods init    - Инициализируем модификации
+import calc  - Загружаем модификацию calc(требуется установка данная модификация может не существовать!)
+calc 5 + 5   - Запускаем ключевое слово
+            </code></pre>
+        </section>
+
+        <p>Понлая инструкция по созданию на гитхабе - <a href="https://github.com/vsp210/python-dark-programing-lang?tab=readme-ov-file#обновление">https://github.com/vsp210/python-dark-programing-lang?tab=readme-ov-file#обновление</a></p>
+
+        <section id="контакты">
+            <h2>Контакты</h2>
+            <p>ВКонтакте: <a href="https://vk.com/vsp210">https://vk.com/vsp210</a></p>
+            <p>Телеграм: <a href="https://t.me/vsp210">https://t.me/vsp210</a></p>
+            <p>Моё портфолио: <a href="https://vsp210.github.io/portfolio/">https://vsp210.github.io/portfolio/</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мой Dark</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Код скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
