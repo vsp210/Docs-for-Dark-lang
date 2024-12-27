@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Документация по языку программирования Dark | update и delete">
+    <meta name="description" content="Документация по языку программирования Dark | upd и delete">
     <link rel="icon" sizes="192x192" href="favicon.png">
     <link rel="apple-touch-icon" sizes="192x192" href="favicon.png">
-    <title>Документация по языку программирования Dark | update и delete</title>
+    <title>Документация по языку программирования Dark | upd и delete</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -44,14 +44,14 @@
     <main>
         <section id="введение">
             <h2>Введение</h2>
-            <p><b>update</b> - это ключевое слово для обновления данных переменной.</p>
+            <p><b>upd</b> - это ключевое слово для обновления данных переменной.</p>
             <p><b>delete</b> - это ключевое слово для удаления переменной.</p>
         </section>
 
         <section id="синтаксис">
             <h2>Синтаксис</h2>
-            <p>Синтаксис <b>update</b> в Dark выглядит следующим образом:</p>
-            <pre><code>update <i>output(необязательно)</i> <i>тип_переменной</i> <i>название_переменной</i> <i>данные_переменной</i></code></pre>
+            <p>Синтаксис <b>upd</b> в Dark выглядит следующим образом:</p>
+            <pre><code>upd <i>output(необязательно)</i> <i>название_переменной</i> := <i>обновлённые_данные_переменной</i></code></pre>
             <p>Синтаксис <b>delete</b> в Dark выглядит следующим образом:</p>
             <pre><code>delete <i>output(необязательно)</i> <i>название_переменной</i></code></pre>
         </section>
@@ -67,9 +67,9 @@
 <-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!":
 set str hi Hello world!
 <-#-> Обнавляем текстовую переменную "hi" на "Hey!":
-update str hi Hey!
+upd hi:=Hey!
 <-#-> Обънавляем текстовую переменную "hi" на "Hello world!" (с выводом):
-update output str hi Hello world!
+upd output hi := Hello world!
                 </code></pre>
                 </div>
             </section>

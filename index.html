@@ -49,7 +49,7 @@
             <select id="modules" name="modules">
                 <option value="output">output</option>
                 <option value="set">set</option>
-                <option value="update_and_delete">update и delete</option>
+                <option value="upd_and_delete">upd и delete</option>
                 <option value="block">block</option>
                 <option value="from_import">from_import</option>
                 <option value="if">if</option>
@@ -91,20 +91,14 @@
                 Dark:
                 <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                 <pre><code>
-<-#-> Пример кода на Dark
 output Hello World!
-
-set list myVar 1|2|3
-output [{myVar.type}]
+set list myVar := 1|2|3
 output [{myVar}]
-
-set input str myVarInput Введите текст:\n\s
+input -> str myVarInput Введите текст:\n\s
 output [{myVarInput}]. Хороший текст!
-
-set output int myVarOutput 123
-
-if myVarOutput == 123 => output hi \|/ set input str myVarInput Привет\n \|/ output myVarInput
-
+set int myVarOutput := 123
+output [{myVarOutput}]
+if [{myVarOutput}] == 123 >= output hi /|\ input -> str myVarInput Привет\n /|\ output [{myVarOutput}]
 delete myVarOutput
 delete myVar
 delete myVarInput
@@ -137,7 +131,7 @@ run-block test_block
 <-#-> Пример кода на Dark
 <-#-> Фаил test2.dark
 
-set str test Hi, I'm Dark
+set str test := Hi, I'm Dark
                 </code></pre>
             </div>
 
@@ -154,7 +148,7 @@ mods init
 
 import type
 
-set int value 123
+set int value := 123
 
 type value
                 </code></pre>
@@ -191,7 +185,7 @@ type value
             const urls = {
                 output: 'output.html',
                 set: 'set.html',
-                update_and_delete: 'update_and_delete.html',
+                upd_and_delete: 'upd_and_delete.html',
                 block: 'block.html',
                 from_import: 'from_import.html',
                 if: 'if.html',

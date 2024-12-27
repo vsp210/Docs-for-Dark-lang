@@ -23,11 +23,11 @@
                 </svg>
             </button>
         </div>
-        
+
         <div id="dropdown" class="dropdown">
             <select id="modules" name="modules">
                 <option value="Объявление_переменных">Объявление переменных</option>
-                <option value="Объявление_полей_вводов">Объявление полей вводов</option>
+                <option value="Объявление_полей_вводов">Поля ввода</option>
                 <option value="Объявление_блоков">Объявление блоков</option>
             </select>
             <button class="button" onclick="goToModule()">Перейти</button>
@@ -51,7 +51,7 @@
         <section id="синтаксис">
             <h2>Синтаксис</h2>
             <p>Синтаксис <b>set</b> в Dark выглядит следующим образом:</p>
-            <pre><code>set <i>доп_команда(необязательно)</i> <i>тип_переменной</i> <i>название_переменной</i> <i>данные_переменной</i></code></pre>
+            <pre><code>set <i>доп_команда(необязательно)</i> <i>тип_переменной</i> <i>название_переменной</i> := <i>данные_переменной</i></code></pre>
         </section>
 
         <section id="примеры">
@@ -63,39 +63,39 @@
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!":
-set str hi Hello world!
+set str hi := Hello world!
 <-#-> Объявляем числовую переменную "digit" ранвную 123:
-set int digit 123
+set int digit := 123
 <-#-> Объявляем булевую перенную "is" равную True:
-set bool is True
+set bool is := True
 <-#-> Объявляем список "ls" равный ["test1", "test2", "test3"]:
-set list ls test1|test2|test3
+set list ls := test1|test2|test3
 <-#-> Объявляем словарь "dict" равный {"test1": "test2", "test3": "test4"}
-set dict dict test1=>test2|test3=>test4
+set dict dict := test1=>test2|test3=>test4
 <-#-> Объявляем реально числовую переменую "float" равную 1,23
-set float float 1,23
+set float float := 1,23
 <-#-> Объявляем текстовую переменную "hi" ранвную "Hello world!" (с выводом):
-set output str hi Hello world!
+set output str hi := Hello world!
 </code></pre>
                 </div>
             </section>
 
             <section id="Объявление_полей_вводов">
-                <p>Объявление полей вводов:</p>
+                <p>Поля ввода:</p>
                 <div class="code-block">
                     Dark:
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем поле ввода str
-set input str var_str Введите текст:\n
+input -> str var_str Введите текст:\n
 <-#-> Объявляем поле ввода int
-set input int var_int Введите целое число:\n
+input -> int var_int Введите целое число:\n
 <-#-> Объявляем поле ввода float
-set input float var_float Введите реальное число:\n
+input -> float var_float Введите реальное число:\n
 <-#-> Объявляем поле ввода list
-set input list var_list Введите список:\n
+input -> list var_list Введите список:\n
 <-#-> Объявляем поле ввода bool
-set input bool var_bool Введите булевое значение (True/False):\n
+input -> bool var_bool Введите булевое значение (True/False):\n
 </code></pre>
                 </div>
             </section>
