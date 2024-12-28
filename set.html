@@ -28,7 +28,6 @@
             <select id="modules" name="modules">
                 <option value="Объявление_переменных">Объявление переменных</option>
                 <option value="Объявление_полей_вводов">Поля ввода</option>
-                <option value="Объявление_блоков">Объявление блоков</option>
             </select>
             <button class="button" onclick="goToModule()">Перейти</button>
         </div>
@@ -100,26 +99,6 @@ input -> bool var_bool Введите булевое значение (True/Fals
                 </div>
             </section>
 
-            <section id="Объявление_блоков">
-                <p>Объявление блоков:</p>
-                <div class="code-block">
-                    Dark:
-                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
-                    <pre><code>
-<-#-> Объявляем блок test_block:
-set block test_block => output tets text
-
-<-#-> Запускаем блок:
-run-block test_block
-<-#-> Объявляем блок test_block с множествой команд:
-set block test_block => set input str text \|/ output text = [{text}]
-
-<-#-> Запускаем блок:
-run-block test_block
-</code></pre>
-                </div>
-            </section>
-
             <section id="контакты">
                 <h2>Контакты</h2>
                 <p>ВКонтакте: <a href="https://vk.com/vsp210">https://vk.com/vsp210</a></p>
@@ -150,8 +129,7 @@ run-block test_block
 
             const urls = {
                 Объявление_переменных: '#Объявление_переменных',
-                Объявление_полей_вводов: '#Объявление_полей_вводов',
-                Объявление_блоков: '#Объявление_блоков'
+                Объявление_полей_вводов: '#Объявление_полей_вводов'
             };
 
             if (urls[selectedValue]) {

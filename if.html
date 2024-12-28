@@ -52,7 +52,9 @@
         <section id="синтаксис">
             <h2>Синтаксис</h2>
             <p>Синтаксис <b>if</b> в Dark выглядит следующим образом:</p>
-            <pre><code>if <i>данные_или_[{переменная}]</i> >= <i>обычная программа с разделением строк через \|/</i></code></pre>
+            <pre><code>if <i>данные_или_[{переменная}]</i> >=
+> <i>обычные_команды</i>
+endif</code></pre>
         </section>
 
         <section id="примеры">
@@ -64,13 +66,19 @@
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем переменную "dighit":
-set int dighit 123
+set int dighit := 123
 <-#-> Примеры сравнения чисел:
-if [{dighit}] == 123 >= output True
+if [{dighit}] == 123 >=
+> output True
+endif
 
-if [{dighit}] < 123 >= output False
+if [{dighit}] < 123 >=
+> output False
+endif
 
-if [{dighit}] > 123 >= output True
+if [{dighit}] > 123 >=
+> output True
+endif
                 </code></pre>
                 </div>
             </section>
@@ -82,9 +90,11 @@ if [{dighit}] > 123 >= output True
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем переменную "dighit":
-set int dighit 123
+set int dighit := 123
 <-#-> Пример простого условия:
-if [{dighit}] == 123 >= output True
+if [{dighit}] == 123 >=
+> output True
+endif
                 </code></pre>
                 </div>
             </section>
@@ -96,9 +106,12 @@ if [{dighit}] == 123 >= output True
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем переменную "dighit":
-set int dighit 123
+set int dighit := 123
 <-#-> Пример сложного условия:
-if [{dighit}] == 123 >= set input str text \|/ output text = [{text}]
+if [{dighit}] == 123 >=
+> set input str text
+> output text = [{text}]
+endif
                 </code></pre>
                 </div>
             </section>
@@ -110,9 +123,11 @@ if [{dighit}] == 123 >= set input str text \|/ output text = [{text}]
                     <button class="copy-button" onclick="copyCode(this)">Копировать</button>
                     <pre><code>
 <-#-> Объявляем булевую переменную "test":
-set bool test True
+set bool test := True
 <-#-> Пример булевой проверки:
-if [{test}] >= output [{test}]
+if [{test}] >=
+> output [{test}]
+endif
                 </code></pre>
                 </div>
             </section>
