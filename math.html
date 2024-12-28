@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Документация по языку программирования Dark | math">
+    <link rel="icon" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon.png">
+    <title>Документация по языку программирования Dark | math</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div style="justify-content: space-between; align-items: center;">
+            <h1 style="color: #ffffff;"><a href="index.html">Документация по языку программирования Dark</a></h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#введение">Введение</a></li>
+                <li><a href="#синтаксис">Синтаксис</a></li>
+                <li><a href="#примеры">Примеры</a></li>
+                <li><a href="#контакты">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="введение">
+            <h2>Введение</h2>
+            <p><b>math</b> - это ключевое слово для проведения математических операций с переменными.</p>
+        </section>
+
+        <section id="синтаксис">
+            <h2>Синтаксис</h2>
+            <p>Синтаксис <b>math</b> в Dark выглядит следующим образом:</p>
+            <pre><code>math [{<i>Переменная</i>}] := <i>Математической действие</i></code></pre>
+            <p>Примеры математических действий:</p>
+            <ul>sin</ul>
+            <ul>cos</ul>
+            <ul>tan</ul>
+            <ul>sqrt</ul>
+            <ul>log</ul>
+            <ul>log10</ul>
+            <ul>pow</ul>
+        </section>
+
+        <section id="примеры">
+            <h2>Примеры использования</h2>
+                <h2>Примеры использования команды math</h2>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{result}] := 5 + 3
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет сумму 5 и 3 и сохраняет результат в переменной <code>result</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{angle}] := sin(30)
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет синус угла 30 градусов и сохраняет результат в переменной <code>angle</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{sqrt_result}] := sqrt(16)
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет квадратный корень из 16 и сохраняет результат в переменной <code>sqrt_result</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{log_result}] := log(100)
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет натуральный логарифм числа 100 и сохраняет результат в переменной <code>log_result</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{final_result}] := (3 * [{x}] + 2) / (1 + log([{y}]))
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет сложное выражение, где <code>x</code> и <code>y</code> - это переменные, значения которых должны быть заранее определены. Результат сохраняется в переменной <code>final_result</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{power_result}] := pow(2, 3)
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда вычисляет 2 в степени 3 и сохраняет результат в переменной <code>power_result</code>.</p>
+
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+math [{comparison_result}] := [{a}] >> [{b}]
+                    </code></pre>
+                </div>
+                <p>Описание: Эта команда проверяет, больше ли значение переменной <code>a</code> значения переменной <code>b</code>, и сохраняет результат в переменной <code>comparison_result</code>.</p>
+        </section>
+
+        <section id="контакты">
+            <h2>Контакты</h2>
+            <p>ВКонтакте: <a href="https://vk.com/vsp210">https://vk.com/vsp210</a></p>
+            <p>Телеграм: <a href="https://t.me/vsp210">https://t.me/vsp210</a></p>
+            <p>Моё портфолио: <a href="https://vsp210.github.io/portfolio/">https://vsp210.github.io/portfolio/</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мой Dark</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Код скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
