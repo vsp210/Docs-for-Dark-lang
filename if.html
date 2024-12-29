@@ -52,7 +52,7 @@
         <section id="синтаксис">
             <h2>Синтаксис</h2>
             <p>Синтаксис <b>if</b> в Dark выглядит следующим образом:</p>
-            <pre><code>if <i>данные_или_[{переменная}]</i> >=
+            <pre><code>if <i>данные_или_[{переменная}]</i> :
 > <i>обычные_команды</i>
 endif</code></pre>
         </section>
@@ -68,15 +68,15 @@ endif</code></pre>
 <-#-> Объявляем переменную "dighit":
 set int dighit := 123
 <-#-> Примеры сравнения чисел:
-if [{dighit}] == 123 >=
+if [{dighit}] == 123 :
 > output True
 endif
 
-if [{dighit}] < 123 >=
+if [{dighit}] < 123 :
 > output False
 endif
 
-if [{dighit}] > 123 >=
+if [{dighit}] > 123 :
 > output True
 endif
                 </code></pre>
@@ -92,7 +92,7 @@ endif
 <-#-> Объявляем переменную "dighit":
 set int dighit := 123
 <-#-> Пример простого условия:
-if [{dighit}] == 123 >=
+if [{dighit}] == 123 :
 > output True
 endif
                 </code></pre>
@@ -108,7 +108,7 @@ endif
 <-#-> Объявляем переменную "dighit":
 set int dighit := 123
 <-#-> Пример сложного условия:
-if [{dighit}] == 123 >=
+if [{dighit}] == 123 :
 > set input str text
 > output text = [{text}]
 endif
@@ -125,7 +125,7 @@ endif
 <-#-> Объявляем булевую переменную "test":
 set bool test := True
 <-#-> Пример булевой проверки:
-if [{test}] >=
+if [{test}] :
 > output [{test}]
 endif
                 </code></pre>

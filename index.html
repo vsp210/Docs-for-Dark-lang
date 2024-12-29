@@ -99,7 +99,11 @@ input -> str myVarInput Введите текст:\n\s
 output [{myVarInput}]. Хороший текст!
 set int myVarOutput := 123
 output [{myVarOutput}]
-if [{myVarOutput}] == 123 >= output hi /|\ input -> str myVarInput Привет\n /|\ output [{myVarOutput}]
+if [{myVarOutput}] == 123 :
+> output hi
+> input -> str myVarInput Привет\n
+> output [{myVarOutput}]
+endif
 delete myVarOutput
 delete myVar
 delete myVarInput
