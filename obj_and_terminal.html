@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Документация по языку программирования Dark | obj и terminal">
+    <link rel="icon" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon.png">
+    <title>Документация по языку программирования Dark | obj и terminal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div style="justify-content: space-between; align-items: center;">
+            <h1 style="color: #ffffff;"><a href="index.html">Документация по языку программирования Dark</a></h1>
+            <button class="svg-button" onclick="toggleDropdown()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="dropdown" class="dropdown">
+            <select id="modules" name="modules">
+                <option value="obj">obj</option>
+                <option value="terminal">terminal</option>
+            </select>
+            <button class="button" onclick="goToModule()">Перейти</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#введение">Введение</a></li>
+                <li><a href="#синтаксис">Синтаксис</a></li>
+                <li><a href="#примеры">Примеры</a></li>
+                <li><a href="#контакты">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="введение">
+            <h2>Введение</h2>
+            <p><b>obj</b> - это ключевое слово для сбора какогото объекта из переменной list или dict.</p>
+            <p><b>terminal</b> - это ключевое слово для выполнения команд в терминале.</p>
+        </section>
+
+        <section id="синтаксис">
+            <h2>Синтаксис</h2>
+            <p>Синтаксис <b>obj</b> в Dark выглядит следующим образом:</p>
+            <pre><code>obj <i>[{любое_имя_перменной}]</i> := <i>перменная_list_или_dict</i> <i>id_для_list_или_ключ_для_dict</i></code></pre>
+            <p>Синтаксис <b>terminal</b> в Dark выглядит следующим образом:</p>
+            <pre><code>terminal <i>команда_для_терминала_или_[{перменная}]</i></code></pre>
+        </section>
+
+        <section id="примеры">
+            <h2>Примеры использования</h2>
+            <section id="obj">
+                <p>obj:</p>
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+<-#-> Объявляем переменные my_list и my_dict:
+set list my_list := item1|item2|item3
+set dict my_dict := key1=>value1|key2=>value2|key3=>value3
+<-#-> Получаем и выводим item1 из my_list:
+obj [{a}] := my_list 0
+output [{a}]
+<-#-> Получаем и выводим value1 из my_dict:
+obj [{a}] := my_dict key2
+output [{a}]
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section id="terminal">
+                <p>terminal:</p>
+                <div class="code-block">
+                    Dark:
+                    <button class="copy-button" onclick="copyCode(this)">Копировать</button>
+                    <pre><code>
+<-#-> Вывод строки в терминале:
+terminal echo "Hello, Dark!"
+<-#-> Вывод текущей даты и времени в терминале:
+terminal date
+                </code></pre>
+                </div>
+            </section>
+        </section>
+
+        <section id="контакты">
+            <h2>Контакты</h2>
+            <p>ВКонтакте: <a href="https://vk.com/vsp210">https://vk.com/vsp210</a></p>
+            <p>Телеграм: <a href="https://t.me/vsp210">https://t.me/vsp210</a></p>
+            <p>Моё портфолио: <a href="https://vsp210.github.io/portfolio/">https://vsp210.github.io/portfolio/</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мой Dark</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Код скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+            });
+        }
+        function goToModule() {
+            const select = document.getElementById('modules');
+            const selectedValue = select.value;
+
+            const urls = {
+                obj: '#obj',
+                terminal: '#terminal'
+            };
+
+            if (urls[selectedValue]) {
+                window.location.href = urls[selectedValue];
+            }
+        }
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>
